@@ -46,7 +46,7 @@ def two_factor_login(two_factor_code, website_controller):
 
     :param hardcoded: An object containing all the hardcoded settings used in this program.
     :param two_factor_code: param website_controller:
-    :param website_controller: Object controlling the browser. 
+    :param website_controller: Object controlling the browser.
 
     """
     two_factor_input = website_controller.driver.find_element_by_id("otp")
@@ -61,7 +61,7 @@ def two_factor_login(two_factor_code, website_controller):
 def get_credentials(hardcoded):
     """Gets the Radboud Sports Center credentials from a hardcoded file and asks the user for
     them if they are not found.
-    
+
     # TODO: export the credentials of the user if the user grants permission for that.
 
     :param hardcoded: An object containing all the hardcoded settings used in this program.

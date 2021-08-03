@@ -4,7 +4,8 @@ import time
 import pickle
 
 from .Website_controller import Website_controller
-#from .ask_user_input import ask_user_choices
+
+# from .ask_user_input import ask_user_choices
 from .ask_user_input import ask_two_factor_code
 from getpass import getpass
 from .helper import get_browser_drivers
@@ -25,7 +26,7 @@ def get_website_controller(hc):
     Monitors the subscription availabilities of the Radboud University Sports Centre.
     Gets the desired user schedule and enrolls the user for the desired schedule when
     available.
-    
+
     :param hc: An object containing all the hardcoded settings used in this program.
 
     """
@@ -42,7 +43,7 @@ def login_github(hardcoded):
     Gets the issues from a github repo. Opens a separate browser instance and then
     closes it again.
     Returns the rsc_data object that contains the parsed availability of the relevant activities.
-    
+
     TODO: determine and document how get_next_activity manages the difference between primary and secondary
     choice.
 
@@ -110,7 +111,7 @@ def pickle_store_website_controller(hardcoded, website_controller):
     """
 
     :param hardcoded: An object containing all the hardcoded settings used in this program.
-    :param website_controller: Object controlling the browser. 
+    :param website_controller: Object controlling the browser.
 
     """
     # Save a dictionary into a pickle file.

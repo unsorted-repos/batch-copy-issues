@@ -6,7 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 def add_two(x):
     """Adds two to an incoming integer.
 
-    :param x: 
+    :param x:
 
     """
     return x + 2
@@ -25,7 +25,7 @@ def read_creds(hardcoded):
     """Reads username and password for Radboud University Sports Center from credentials file,
     if the file exists, asks the user to manually enter them if the file is not found.
     Returns two strings representing the username and password for the Radboud University Sports Center login.
-    
+
     TODO: verify this is not a duplicate method.
 
     :param hardcoded: An object containing all the hardcoded settings used in this program.
@@ -44,7 +44,7 @@ def read_creds(hardcoded):
 def get_creds_if_not_exist(hardcoded):
     """Asks the user to enter the username and password for the login to the
     Radboud Universitiy Sports Center login.
-    
+
     TODO: ask user to include 'read' before username and password,
     to indicate that they read the source code before entering their username
     and password (and verified that it is not shared). Give them a warning about
@@ -66,7 +66,7 @@ def get_creds_if_not_exist(hardcoded):
 def get_labels_from_issues(issues):
     """
 
-    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue. 
+    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue.
 
     """
     labels = []
@@ -117,7 +117,7 @@ def get_browser_drivers(hardcoded):
 def file_is_found(filepath, hardcoded):
     """
 
-    :param filepath: 
+    :param filepath:
     :param hardcoded: An object containing all the hardcoded settings used in this program.
 
     """

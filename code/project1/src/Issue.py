@@ -29,7 +29,7 @@ class Issue:
     def set_title(self, title):
         """
 
-        :param title: 
+        :param title:
 
         """
         self.title = title
@@ -37,7 +37,7 @@ class Issue:
     def set_status(self, status):
         """
 
-        :param status: 
+        :param status:
 
         """
         self.status = status
@@ -45,7 +45,7 @@ class Issue:
     def set_comments(self, comments):
         """
 
-        :param comments: 
+        :param comments:
 
         """
         self.comments = comments
@@ -53,7 +53,7 @@ class Issue:
     def set_assignees(self, assignees):
         """
 
-        :param assignees: 
+        :param assignees:
 
         """
         self.assignees = assignees
@@ -69,7 +69,7 @@ class Issue:
     def set_projects(self, projects):
         """
 
-        :param projects: 
+        :param projects:
 
         """
         self.projects = projects
@@ -77,7 +77,7 @@ class Issue:
     def set_milestones(self, milestones):
         """
 
-        :param milestones: 
+        :param milestones:
 
         """
         self.milestones = milestones

@@ -1,4 +1,5 @@
 # Code that automatically copies all issues of a repository to another
+from .ask_user_input import ask_source_and_target
 from .control_website import login
 from .Hardcoded import Hardcoded
 from .helper import get_labels_from_issues
@@ -26,6 +27,16 @@ class Main:
         self.relative_src_filepath = f"code/project{self.project_nr}/src/"
         # Store the hardcoded values used within this project
         self.hc = Hardcoded()
+
+        # ask user for source and target repo
+        self.hc = ask_source_and_target(self.hc)
+        proceed = input(
+            f"Copying from:\ngithub.com/{self.hc.source_username}/{self.hc.source_reponame}\n to:\ngithub.com/{self.hc.target_username}/{self.hc.target_reponame}\nIs that correct(y/n)?"
+        )
+        if proceed != "y":
+            raise Exception(
+                "You did not enter y. Please provide the correct details and try again."
+            )
 
         # Create a website control object and login to GitHub.
         if login:

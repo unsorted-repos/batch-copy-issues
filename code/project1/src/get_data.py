@@ -63,8 +63,8 @@ def get_issues(source_reponame, source_username, website_controller):
     issues = []
 
     # loop through issues
-    for i in range(1, nr_of_issues):
-    #for i in range(1, 3):
+    for i in range(1, nr_of_issues + 1):
+        # for i in range(1, 3):
         issue = Issue()
         issue.set_title(
             get_issue_title(i, source_reponame, source_username, website_controller)
@@ -123,7 +123,7 @@ def loop_through_issue_pages(source_reponame, source_username, website_controlle
     """
     # loop through pages
     for i in range(1, nr_of_issue_pages):
-    #for i in range(1, 3):
+        # for i in range(1, 3):
         # visit issue page
         # visit issue page
         website_controller.driver = open_url(

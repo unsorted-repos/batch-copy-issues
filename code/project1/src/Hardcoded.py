@@ -38,3 +38,17 @@ class Hardcoded:
         self.cred_path = "code/project1/src/creds.txt"
         # website properties
         self.login_url = "https://github.com/login"
+
+    def set_source_repo(self, username, reponame):
+        self.source_username = username
+        self.source_reponame = reponame
+        self.source_repo_url = (
+            f"https://github.com/{self.source_username}/{self.source_reponame}/issues"
+        )
+
+    def set_target_repo(self, username, reponame):
+        self.target_username = username
+        self.target_reponame = reponame
+        self.target_repo_url = (
+            f"https://github.com/{self.target_username}/{self.target_reponame}/issues"
+        )

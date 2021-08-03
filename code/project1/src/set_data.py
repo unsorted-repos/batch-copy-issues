@@ -10,9 +10,9 @@ def set_labels(labels, target_reponame, target_username, website_controller):
     """
 
     :param labels: :param labels: [List] of label objects representing the content and colour of a label.
-    :param target_reponame: The repository name to which you want to copy the issues. 
-    :param target_username: The GitHub username that contains the repo to which you want to copy the issues. 
-    :param website_controller: Object controlling the browser. 
+    :param target_reponame: The repository name to which you want to copy the issues.
+    :param target_username: The GitHub username that contains the repo to which you want to copy the issues.
+    :param website_controller: Object controlling the browser.
 
     """
     for label in labels:
@@ -52,6 +52,7 @@ def set_labels(labels, target_reponame, target_username, website_controller):
 # get milestones
 def get_milestones():
     """ """
+
     def get_milestone_names():
         """ """
         pass
@@ -80,12 +81,12 @@ def set_issues(
 ):
     """
 
-    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue. 
+    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue.
     :param source_reponame: The repository name of the issues you want to copy. The repository name of the issues you want to copy.
-    :param source_username: The GitHub username that contains the repo containing the issues you want to copy. 
-    :param target_reponame: The repository name to which you want to copy the issues. 
-    :param target_username: The GitHub username that contains the repo to which you want to copy the issues. 
-    :param website_controller: Object controlling the browser. 
+    :param source_username: The GitHub username that contains the repo containing the issues you want to copy.
+    :param target_reponame: The repository name to which you want to copy the issues.
+    :param target_username: The GitHub username that contains the repo to which you want to copy the issues.
+    :param website_controller: Object controlling the browser.
 
     """
     adding_issues = get_list_of_new_issues_to_add(
@@ -113,7 +114,7 @@ def set_issues(
 def filter_open_issues(issues):
     """
 
-    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue. 
+    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue.
 
     """
     open_issues = []
@@ -130,8 +131,8 @@ def filter_open_issues(issues):
 def add_label_to_issue(issue, website_controller):
     """
 
-    :param issue: Objects containing the data (e.g. title, comments) of an issue.  
-    :param website_controller: Object controlling the browser. 
+    :param issue: Objects containing the data (e.g. title, comments) of an issue.
+    :param website_controller: Object controlling the browser.
 
     """
 
@@ -174,8 +175,8 @@ def add_label_to_issue(issue, website_controller):
 def set_comments(issue, website_controller):
     """
 
-    :param issue: Objects containing the data (e.g. title, comments) of an issue.  
-    :param website_controller: Object controlling the browser. 
+    :param issue: Objects containing the data (e.g. title, comments) of an issue.
+    :param website_controller: Object controlling the browser.
 
     """
     # click xpath for new issue:
@@ -236,10 +237,10 @@ def get_list_of_new_issues_to_add(
 ):
     """
 
-    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue. 
-    :param target_reponame: The repository name to which you want to copy the issues. 
-    :param target_username: The GitHub username that contains the repo to which you want to copy the issues. 
-    :param website_controller: Object controlling the browser. 
+    :param issues: [List] of Issue objects containing the data (e.g. title, comments) of an issue.
+    :param target_reponame: The repository name to which you want to copy the issues.
+    :param target_username: The GitHub username that contains the repo to which you want to copy the issues.
+    :param website_controller: Object controlling the browser.
 
     """
     # get the list of issues in the target repo
