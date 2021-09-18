@@ -3,7 +3,7 @@ from .Issue import Issue
 from .Milestone import Milestone
 from .Comment import Comment
 from .helper import source_contains
-
+import re
 
 def get_labels():
     """Gets the labels directly from the source repository.
@@ -56,10 +56,14 @@ def get_issues(source_reponame, source_username, website_controller):
 
     """
     # get nr of issues
-    nr_of_issues = get_nr_of_issues(
+    nr_of_issues, issue_nrs = get_nr_of_issues(
         source_reponame, source_username, website_controller
     )
 
+    print(f'source_reponame={source_reponame}')
+    print(f'source_username={source_username}')
+    print(f'nr_of_issues={nr_of_issues}') 
+    
     issues = []
 
     # loop through issues
@@ -110,8 +114,30 @@ def get_nr_of_issues(source_reponame, source_username, website_controller):
     source = website_controller.driver.page_source
     # extract indicator string of first issue
     nr_of_issues = get_nr_from_html_source(source, 'aria-labelledby="issue_', "_")
-    return nr_of_issues
+    if (nr_of_issues == 0) or (nr_of_issues is None):
+        nr_of_issues,index_nrs= manually_count_nr_of_issues(source,source_reponame, source_username)
+    return nr_of_issues,index_nrs
 
+def manually_count_nr_of_issues(source,source_reponame, source_username):
+    #start_string=f'/{source_username}/{source_reponame}/issues/'
+    start_string=f'href="/{source_username}/{source_reponame}/issues/'
+    #13">
+    end_string=f'">'
+    issue_indices=[m.start() for m in re.finditer(start_string, source)]
+    print(f'issue_indices={issue_indices}')
+    return get_issue_nrs(source, issue_indices,start_string,end_string)
+    #pass
+
+def get_issue_nrs(source, indices,start_string,end_string):
+    index_nrs=[]
+    for index in indices:
+        try:
+            index_nrs.append(int(get_value_from_html_source(source[index:], start_string, end_string)))
+        except:
+            pass
+    index_nrs=list(dict.fromkeys(index_nrs))
+    print(f'index_nrs={index_nrs}')
+    return len(index_nrs),index_nrs
 
 def loop_through_issue_pages(source_reponame, source_username, website_controller):
     """
