@@ -64,7 +64,7 @@ def get_issues(source_reponame, source_username, website_controller):
 
     # loop through issues
     for i in range(1, nr_of_issues + 1):
-        # for i in range(1, 3):
+    # for i in range(1, 3):
         issue = Issue()
         issue.set_title(
             get_issue_title(i, source_reponame, source_username, website_controller)

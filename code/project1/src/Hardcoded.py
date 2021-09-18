@@ -24,10 +24,10 @@ class Hardcoded:
         self.chromium_driver_filename = "chromedriver90"
 
         # specify source repository
-        self.source_username = "HiveMinds-EU"
-        self.target_username = "HiveMinds-EU"
-        self.source_reponame = "Taskwarrior-installation-original"
-        self.target_reponame = "Taskwarrior-installation"
+        self.source_username = "a-t-2"
+        self.target_username = "one-line-deploy"
+        self.source_reponame = "Setup-Raspberry-Pi-4b-tor-GitLab-website-SSH"
+        self.target_reponame = "Self-host-GitLab-CI"
         self.source_repo_url = (
             f"https://github.com/{self.source_username}/{self.source_reponame}/issues"
         )

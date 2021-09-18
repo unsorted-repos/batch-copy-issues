@@ -13,7 +13,7 @@ from selenium.webdriver.common.keys import Keys
 class Main:
     """ """
 
-    def __init__(self, project_nr, login=True):
+    def __init__(self, project_nr, use_hardcoded_source_and_target, login=True):
         """Initialises object that gets the browser controller, then it gets the issues
         from the source repo, and copies them to the target repo.
 
@@ -24,12 +24,14 @@ class Main:
 
         # project_nr is an artifact of folder structure
         self.project_nr = project_nr
+        self.use_hardcoded_source_and_target=use_hardcoded_source_and_target
         self.relative_src_filepath = f"code/project{self.project_nr}/src/"
         # Store the hardcoded values used within this project
         self.hc = Hardcoded()
 
         # ask user for source and target repo
-        self.hc = ask_source_and_target(self.hc)
+        if not self.use_hardcoded_source_and_target:
+            self.hc = ask_source_and_target(self.hc)
         proceed = input(
             f"Copying from:\ngithub.com/{self.hc.source_username}/{self.hc.source_reponame}\n to:\ngithub.com/{self.hc.target_username}/{self.hc.target_reponame}\nIs that correct(y/n)?"
         )
