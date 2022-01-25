@@ -1,4 +1,4 @@
-# Batch_copy_issues
+# Batch copy GitHub issues
 Batch copies issues from repo A to repo B.
 
 ## Usage: do once
